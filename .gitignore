@@ -1,0 +1,52 @@
+# .gitignore
+# ----------
+# Files and folders Git should NEVER track. Each entry is explained so you
+# know WHY it is excluded.
+
+# --- Generated runtime output ----------------------------------------
+# Logs and alerts are created when the NIDS runs. They are different on
+# every machine and every run, so they must not be committed.
+logs/
+*.log
+*.csv
+# Exception: keep the sample blacklist, which IS source data we maintain.
+!data/blacklist.txt
+
+# --- Python bytecode cache -------------------------------------------
+# Python compiles .py files to .pyc inside __pycache__ for speed. These are
+# regenerated automatically and are machine-specific.
+__pycache__/
+*.py[cod]
+*.pyc
+
+# --- Virtual environments --------------------------------------------
+# Never commit an environment; others recreate it from requirements.txt.
+# (We use a conda env named 'nids', but cover the common local-env folders too.)
+.venv/
+venv/
+env/
+.conda/
+
+# --- Test / tooling caches -------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# --- IDE / editor settings -------------------------------------------
+# Personal editor settings should not be forced on other contributors.
+.vscode/
+.idea/
+*.swp
+
+# --- OS junk ----------------------------------------------------------
+# Files the operating system drops into folders automatically.
+Thumbs.db      # Windows image cache
+desktop.ini    # Windows folder settings
+.DS_Store      # macOS folder metadata
+
+# --- Secrets ----------------------------------------------------------
+# If you ever add a real secrets file, keep it out of Git. Commit .env.example
+# (a template with blank values) instead.
+.env

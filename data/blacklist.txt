@@ -1,0 +1,13 @@
+# blacklist.txt
+# -------------
+# One IPv4 or IPv6 address per line. Anything after '#' is a comment.
+# Any packet whose SOURCE IP matches an entry triggers a "Blacklisted IP" alert.
+#
+# The three addresses below are reserved "documentation" addresses (RFC 5737).
+# They never appear on the real internet, so they are safe examples.
+192.0.2.10
+198.51.100.23
+203.0.113.77
+
+# To TEST the blacklist rule in Module 6, remove the '#' from the next line:
+# 127.0.0.1

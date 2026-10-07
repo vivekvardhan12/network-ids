@@ -1,0 +1,13 @@
+# requirements.txt
+# ----------------
+# Every Python package this project needs, with a minimum version.
+# Install all of them with:   pip install -r requirements.txt
+#
+# ">=" means "this version or newer". Pinning a floor keeps the project
+# reproducible while still allowing security patches.
+
+scapy>=2.5.0        # packet capture and crafting (sniffer + attack simulator)
+colorama>=0.4.6     # coloured alert text in the Windows console
+pandas>=2.0.0       # reads alerts.csv and summarises it for the dashboard
+streamlit>=1.30.0   # the web dashboard
+pytest>=8.0.0       # the automated test suite
